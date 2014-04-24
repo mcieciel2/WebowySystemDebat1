@@ -4,6 +4,7 @@
     Author     : Adrian Lapierre <adrian@softproject.com.pl>
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -13,8 +14,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <body>
-        <h1>Spring CRM :: Dodawanie osoby</h1>
+    <body> 
+        <h1>Spring CRM :: <c:choose><c:when test="${not empty param['id']}">Edycja danych osoby</c:when><c:otherwise>Dodawanie osoby</c:otherwise></c:choose></h1>
         
         <form:form commandName="person" method="POST" action="add.htm">
             
