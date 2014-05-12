@@ -28,7 +28,7 @@
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
-            /WEB-INF/spring-crm-web-servlet.xml,
+            
             classpath:spring-crm-web-core.xml          
         </param-value>
     </context-param>
