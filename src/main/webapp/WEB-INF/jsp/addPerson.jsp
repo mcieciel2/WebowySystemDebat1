@@ -24,6 +24,7 @@
             <form:input path="lastName" placeholder="Nazwisko" required="true"/><form:errors path="lastName"/><br/>
             <form:input path="email" type="email" placeholder="Mail" required="true" /><form:errors path="email"/> <br/>
             <form:input path="discount" placeholder="Rabat" /><form:errors path="discount"/><br/>
+            <form:select items="${teams}" path="team.id" itemValue="id" itemLabel="name"></form:select>
             
             <form:button>Zapisz</form:button>
             
