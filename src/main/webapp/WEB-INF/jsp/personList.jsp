@@ -1,8 +1,4 @@
-<%-- 
-    Document   : personList
-    Created on : 2014-03-27, 09:32:11
-    Author     : Adrian Lapierre <adrian@softproject.com.pl>
---%>
+
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
