@@ -1,4 +1,6 @@
-
+/*
+ * Copyright 2011-08-31 the original author or authors.
+ */
 
 package pl.com.softproject.spring.crm.web.model;
 
@@ -7,7 +9,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-
+/**
+ *
+ * @author Adrian Lapierre <adrian@softproject.com.pl>
+ */
 @Entity
 public class Team {
     
