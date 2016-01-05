@@ -1,2 +1,0 @@
-Sample Spring MVC, SpringData, SpringSecurity web application. Demonstrate how 
-to utilize maven archetype spring-mvc-spring-data-archetype https://github.com/alapierre/altkom/tree/master/spring-mvc-spring-data-archetype
