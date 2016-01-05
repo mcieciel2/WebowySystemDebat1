@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package form;
+package dto;
 
 import java.util.ArrayList;
 
@@ -11,11 +11,11 @@ import java.util.ArrayList;
  *
  * @author Marcin
  */
-public class DebataForm {
+public class DebataDto {
 
     @Override
     public String toString() {
-        return "DebataForm{" + "id=" + id + ", tytul=" + tytul + ", opis=" + opis + ", data=" + data + ", video=" + video + ", kategoriaIndex=" + kategoriaIndex + ", listarozmowcow=" + listarozmowcow + ", unused=" + unused + '}';
+        return "DebataForm{" + "id=" + id + ", tytul=" + tytul + ", opis=" + opis + ", data=" + data + ", video=" + video + ", kategoriaIndex=" + kategoria + ", listarozmowcow=" + listarozmowcow + ", unused=" + unused + '}';
     }
 
     private Integer id;
@@ -23,7 +23,7 @@ public class DebataForm {
     private String opis;
     private String data;
     private String video;
-    private Integer kategoriaIndex;
+    private Integer kategoria;
     ArrayList<RozmowcawDebacieDto> listarozmowcow;
 
     private Integer unused;
@@ -40,7 +40,7 @@ public class DebataForm {
         return id;
     }
 
-    public DebataForm() {
+    public DebataDto() {
 
         listarozmowcow = new ArrayList();
         listarozmowcow.add(new RozmowcawDebacieDto());
@@ -93,11 +93,11 @@ public class DebataForm {
     }
 
     public Integer getKategoriaIndex() {
-        return kategoriaIndex;
+        return kategoria;
     }
 
     public void setKategoriaIndex(Integer kategoriaIndex) {
-        this.kategoriaIndex = kategoriaIndex;
+        this.kategoria = kategoriaIndex;
     }
 
 }

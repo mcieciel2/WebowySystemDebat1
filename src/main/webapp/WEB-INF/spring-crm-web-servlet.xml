@@ -27,10 +27,6 @@
     
     
     
-    <bean id="messageSource"
-          class="org.springframework.context.support.ResourceBundleMessageSource">
-        <property name="basename" value="messages" />
-    </bean>
     <mvc:resources mapping="classpath:css" location="/assets/**"></mvc:resources>
 
 </beans>

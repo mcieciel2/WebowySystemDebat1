@@ -5,8 +5,8 @@
  */
 package pl.com.softproject.spring.crm.web.controller;
 
-import form.DebataForm;
-import form.RozmowcawDebacieDto;
+import dto.DebataDto;
+import dto.RozmowcawDebacieDto;
 import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -222,7 +222,7 @@ public class AdminController {
         
         ModelAndView modelAndView = new ModelAndView("addDebata");
         
-        DebataForm debataform = new DebataForm();
+        DebataDto debataform = new DebataDto();
         modelAndView.addObject("debata", debataform);
         modelAndView.addObject("kategorie", kategoriaDAO.findAll());
         modelAndView.addObject("rozmowcy", rozmowcaDAO.findAll());
@@ -231,7 +231,7 @@ public class AdminController {
     }
     
     @RequestMapping(value = "addd", method = RequestMethod.POST)
-    public String saveDebata(DebataForm debata, BindingResult binding) {
+    public String saveDebata(DebataDto debata, BindingResult binding) {
 
 //        if(binding.hasErrors()) {
 //            return "addDebata";

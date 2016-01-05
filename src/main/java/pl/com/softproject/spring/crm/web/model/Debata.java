@@ -5,7 +5,7 @@
  */
 package pl.com.softproject.spring.crm.web.model;
 
-import form.DebataForm;
+import dto.DebataDto;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -66,7 +66,7 @@ public class Debata {
         rozmowcy = new ArrayList();
     }
 
-    public Debata(DebataForm debata) {
+    public Debata(DebataDto debata) {
         rozmowcy = new ArrayList();
         tytul = debata.getTytul();
         opis = debata.getOpis();

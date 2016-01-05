@@ -8,7 +8,7 @@
     <packaging>war</packaging>
 
     <name>SystemDebat</name>
-    <url>http://www.softproject.com.pl</url>
+ 
     
     <properties>
         <spring.version>3.2.2.RELEASE</spring.version>

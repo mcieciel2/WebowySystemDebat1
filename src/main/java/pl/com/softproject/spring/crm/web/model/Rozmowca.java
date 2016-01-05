@@ -5,9 +5,15 @@
  */
 package pl.com.softproject.spring.crm.web.model;
 
+import dto.RozmowcaDto;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -57,6 +63,22 @@ public class Rozmowca {
     public Rozmowca() {
 
         debaty = new ArrayList();
+    }
+
+    public Rozmowca(RozmowcaDto rozmowca) {
+        debaty = new ArrayList();
+        imie = rozmowca.getImie();
+        nazwisko = rozmowca.getNazwisko();
+        opis = rozmowca.getOpis();
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            if (rozmowca.getDataurodzenia() != null) {
+                dataurodzenia = df.parse(rozmowca.getDataurodzenia());
+            }
+        } catch (ParseException ex) {
+            Logger.getLogger(Debata.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
     public Integer getId() {
