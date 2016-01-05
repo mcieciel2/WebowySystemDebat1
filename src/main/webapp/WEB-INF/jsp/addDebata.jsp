@@ -107,7 +107,7 @@
     <form:input type="text" class="form-control" id="video"  path="video" placeholder="Video" required="true"/><form:errors path="video"/>
   </div>
   <label for="">Kategoria:</label></br>
-  <form:select items="${kategorie}" path="kategoriaIndex" class="form-control" itemValue="id" itemLabel="nazwa"></form:select></br>
+  <form:select items="${kategorie}" path="kategoria" class="form-control" itemValue="id" itemLabel="nazwa"></form:select></br>
 
            
            

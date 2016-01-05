@@ -232,7 +232,7 @@
                 <tr>
                     <td> <a href="<c:url value="/editt.htm"/>?id=${termin.id}">${termin.id}</a></td>
                     <td>${termin.nazwa}</td>
-                    <td>${termin.kategoria.nazwa}</td>
+                    <td>${termin.kategoria.id}</td>
                     <td><a href="<c:url value="/editt.htm"/>?id=${termin.id}">Edytuj</a>/<a href="<c:url value="/deletek.htm"/>?id=${termin.id}">Usuń</a></td>
                 </tr>
             </c:forEach>
