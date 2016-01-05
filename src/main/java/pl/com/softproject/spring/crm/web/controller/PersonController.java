@@ -1,6 +1,4 @@
-/*
- * Copyright 2011-08-31 the original author or authors.
- */
+
 
 package pl.com.softproject.spring.crm.web.controller;
 
@@ -17,10 +15,6 @@ import pl.com.softproject.spring.crm.web.dao.TeamDAO;
 import pl.com.softproject.spring.crm.web.model.Person;
 import pl.com.softproject.spring.crm.web.model.Team;
 
-/**
- *
- * @author Adrian Lapierre <adrian@softproject.com.pl>
- */
 @Controller
 @RequestMapping("/person")
 public class PersonController {

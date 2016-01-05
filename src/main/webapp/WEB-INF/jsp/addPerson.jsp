@@ -1,8 +1,3 @@
-<%-- 
-    Document   : addPerson
-    Created on : 2014-03-27, 09:04:28
-    Author     : Adrian Lapierre <adrian@softproject.com.pl>
---%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>

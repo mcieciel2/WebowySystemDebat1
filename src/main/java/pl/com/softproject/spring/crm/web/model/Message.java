@@ -11,10 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-/**
- *
- * @author Adrian Lapierre <adrian@softproject.com.pl>
- */
 @Entity
 public class Message {
     
