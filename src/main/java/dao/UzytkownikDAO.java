@@ -1,5 +1,5 @@
 
-package pl.com.softproject.spring.crm.web.dao;
+package dao;
 
 
 import java.util.List;

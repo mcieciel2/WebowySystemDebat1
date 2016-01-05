@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pl.com.softproject.spring.crm.web.controller;
+package controller;
 
 import dto.DebataDto;
 import dto.RozmowcawDebacieDto;
@@ -17,11 +17,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import pl.com.softproject.spring.crm.web.dao.DebataDAO;
-import pl.com.softproject.spring.crm.web.dao.KategoriaDAO;
-import pl.com.softproject.spring.crm.web.dao.RozmowcaDAO;
-import pl.com.softproject.spring.crm.web.dao.TerminDAO;
-import pl.com.softproject.spring.crm.web.dao.UzytkownikDAO;
+import dao.DebataDAO;
+import dao.KategoriaDAO;
+import dao.RozmowcaDAO;
+import dao.TerminDAO;
+import dao.UzytkownikDAO;
 import pl.com.softproject.spring.crm.web.model.Argument;
 import pl.com.softproject.spring.crm.web.model.Debata;
 import pl.com.softproject.spring.crm.web.model.Kategoria;

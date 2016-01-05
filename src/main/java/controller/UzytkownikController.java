@@ -1,6 +1,6 @@
 
 
-package pl.com.softproject.spring.crm.web.controller;
+package controller;
 
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import pl.com.softproject.spring.crm.web.dao.UzytkownikDAO;
+import dao.UzytkownikDAO;
 
 import pl.com.softproject.spring.crm.web.model.Uzytkownik;
 
