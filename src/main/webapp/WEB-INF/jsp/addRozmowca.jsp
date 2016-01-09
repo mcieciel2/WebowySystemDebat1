@@ -102,7 +102,7 @@
           
             
        
-        <form:form commandName="rozmowca" method="POST" action="addr.htm">
+        <form:form commandName="rozmowca" method="POST" action="addr.htm" enctype="multipart/form-data">
             <form:hidden path="id"/>
     	<form role="form">
   <div class="form-group">
@@ -115,7 +115,7 @@
   </div>
    <div class="form-group">
     <label for="pwd">Data urodzenia:</label>
-    <input type="date" class="form-control" id="pwd">
+<form:input class="form-control" id="dataurodzenia" path="dataurodzenia" type="text" placeholder="Dataurodzenia" required="true"/><form:errors path="dataurodzenia"/>
   </div>
 <div class="form-group">
   <label for="comment">Opis:</label>
@@ -125,7 +125,7 @@
    
     <label>Avatar</label>
       <label class = "sr-only" for = "inputfile">Avatar:</label>
-      <input type = "file" id = "inputfile" name="foto">
+      <form:input type="file" name="zdjecie" path="zdjecie" required="true" ></form:input><form:errors path="zdjecie"/>
       
 
        <c:choose>  <c:when test="${not empty param['id']}"><form:button type="submit" class="btn btn-default">Zapisz</form:button></c:when><c:otherwise><form:button type="submit" class="btn btn-default">Dodaj rozmówce</form:button></c:otherwise></c:choose>

@@ -102,7 +102,7 @@
     <tr>
        <c:forEach items="${debaty}" var="debata">
                 <tr>
-                    <td> <a href="<c:url value="/editd.htm"/>?id=${debata.id}">${debata.id}</a></td>
+                    <td> <a href="<c:url value="/singled.htm"/>?id=${debata.id}">${debata.id}</a></td>
                     <td>${debata.tytul}</td>
                     <td>${debata.data}</td>
                     <td><a href="<c:url value="/editd.htm"/>?id=${debata.id}">Edytuj</a>/<a href="<c:url value="/deleted.htm"/>?id=${debata.id}">Usuń</a></td>
@@ -136,7 +136,7 @@
   <tbody>
        <c:forEach items="${rozmowcy}" var="rozmowca">
                 <tr>
-                    <td> <a href="<c:url value="/editr.htm"/>?id=${rozmowca.id}">${rozmowca.id}</a></td>
+                    <td> <a href="<c:url value="/singler.htm"/>?id=${rozmowca.id}">${rozmowca.id}</a></td>
                     <td>${rozmowca.imie}</td>
                     <td>${rozmowca.nazwisko}</td>
                     <td><a href="<c:url value="/editr.htm"/>?id=${rozmowca.id}">Edytuj</a>/<a href="<c:url value="/deleter.htm"/>?id=${rozmowca.id}">Usuń</a></td>

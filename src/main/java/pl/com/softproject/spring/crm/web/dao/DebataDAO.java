@@ -3,15 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dao;
+package pl.com.softproject.spring.crm.web.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import pl.com.softproject.spring.crm.web.model.Rozmowca;
+import pl.com.softproject.spring.crm.web.model.Debata;
+
 
 /**
  *
  * @author Marcin
  */
-public interface RozmowcaDAO extends JpaRepository<Rozmowca, Integer> {
-
+public interface DebataDAO extends JpaRepository<Debata, Integer>{
+    
+    
+    
 }
+

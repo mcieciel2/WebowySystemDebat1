@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dao;
+package pl.com.softproject.spring.crm.web.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import pl.com.softproject.spring.crm.web.model.Termin;

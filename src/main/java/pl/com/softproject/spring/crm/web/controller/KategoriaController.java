@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controller;
+package pl.com.softproject.spring.crm.web.controller;
+
 
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,20 +14,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import dao.DebataDAO;
-import dao.KategoriaDAO;
-import pl.com.softproject.spring.crm.web.model.Debata;
+import pl.com.softproject.spring.crm.web.dao.KategoriaDAO;
 
-/**
- *
- * @author Marcin
- */
+import pl.com.softproject.spring.crm.web.model.Kategoria;
 
-  
+
+
 @Controller
-public class DebataController {
+@RequestMapping("/kategoria")
+public class KategoriaController {
     
-
+    @Autowired
+   private KategoriaDAO kategoriaDAO;
+   
+   
+    
 }
-
 

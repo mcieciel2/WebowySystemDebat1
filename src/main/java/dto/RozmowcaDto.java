@@ -5,6 +5,8 @@
  */
 package dto;
 
+import org.springframework.web.multipart.MultipartFile;
+
 /**
  *
  * @author Marcin
@@ -16,6 +18,15 @@ public class RozmowcaDto {
     private String nazwisko;
     private String dataurodzenia;
     private String opis;
+    private MultipartFile zdjecie;
+
+    public MultipartFile getZdjecie() {
+        return zdjecie;
+    }
+
+    public void setZdjecie(MultipartFile zdjecie) {
+        this.zdjecie = zdjecie;
+    }
 
     public Integer getId() {
         return id;

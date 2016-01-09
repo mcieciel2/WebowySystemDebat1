@@ -15,7 +15,7 @@ public class DebataDto {
 
     @Override
     public String toString() {
-        return "DebataForm{" + "id=" + id + ", tytul=" + tytul + ", opis=" + opis + ", data=" + data + ", video=" + video + ", kategoriaIndex=" + kategoria + ", listarozmowcow=" + listarozmowcow + ", unused=" + unused + '}';
+        return "DebataForm{" + "id=" + id + ", tytul=" + tytul + ", opis=" + opis + ", data=" + data + ", video=" + video + ", kategoriaIndex=" + kategoria + ", listarozmowcow=" + listarozmowcow + ", unused=" + rozmowca + '}';
     }
 
     private Integer id;
@@ -26,14 +26,14 @@ public class DebataDto {
     private Integer kategoria;
     ArrayList<RozmowcawDebacieDto> listarozmowcow;
 
-    private Integer unused;
+    private Integer rozmowca;
 
-    public Integer getUnused() {
-        return unused;
+    public Integer getRozmowca() {
+        return rozmowca;
     }
 
-    public void setUnused(Integer unused) {
-        this.unused = unused;
+    public void setRozmowca(Integer rozmowca) {
+        this.rozmowca = rozmowca;
     }
 
     public Integer getId() {
@@ -92,12 +92,12 @@ public class DebataDto {
         this.video = video;
     }
 
-    public Integer getKategoriaIndex() {
+    public Integer getKategoria() {
         return kategoria;
     }
 
-    public void setKategoriaIndex(Integer kategoriaIndex) {
-        this.kategoria = kategoriaIndex;
+    public void setKategoria(Integer kategoria) {
+        this.kategoria = kategoria;
     }
 
 }

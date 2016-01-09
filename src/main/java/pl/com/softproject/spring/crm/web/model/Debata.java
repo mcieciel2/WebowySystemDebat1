@@ -45,6 +45,25 @@ public class Debata {
     @Column
     private String video;
 
+    @Column
+    private Integer wyswietlenia;
+
+    public Integer getWyswietlenia() {
+        return wyswietlenia;
+    }
+
+    public void setWyswietlenia(Integer wyswietlenia) {
+        this.wyswietlenia = wyswietlenia;
+    }
+
+    public List<RozmowcawDebacie> getRozmowcy() {
+        return rozmowcy;
+    }
+
+    public void setRozmowcy(List<RozmowcawDebacie> rozmowcy) {
+        this.rozmowcy = rozmowcy;
+    }
+
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "kategoria_id")
     private Kategoria kategoria;
@@ -80,7 +99,13 @@ public class Debata {
         }
         video = debata.getVideo();
         kategoria = new Kategoria();
-        kategoria.setId(debata.getId());
+        kategoria.setId(debata.getKategoria());
+        wyswietlenia = 0;
+    }
+
+    public void powiekszwyswietlenia() {
+
+        wyswietlenia = wyswietlenia + 1;
     }
 
     public Integer getId() {

@@ -1,4 +1,3 @@
-
 <%-- 
     Document   : addRozmowca
     Created on : 2015-11-28, 01:12:59
@@ -13,7 +12,7 @@
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Rozmówca</title>
+        <title>Rejestracja</title>
     </head>
      
         
@@ -28,10 +27,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>${rozmowca.imie} ${rozmowca.nazwisko}</title>
+    <title>Rejestracja użytkownika</title>
 
     <!-- Bootstrap -->
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" >
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -74,7 +73,7 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
      
-        <h1>Rozmówca </h1>
+        <h1>Zarejestruj się</h1>
         <p>Webowy System Oceny debat politycznych z modułem klasyfikacji argumentów.</p>
       
       </div>
@@ -85,7 +84,9 @@
       <div class="row">
       <div>
 
-
+  <!-- Nav tabs -->
+ 
+    <center>	<h2><h1>Użytkownik :: <c:choose><c:when test="${not empty param['id']}">Edycja danych</c:when><c:otherwise>Zarejestruj się</c:otherwise></c:choose></h1></h2> </center>
 
             
             
@@ -101,43 +102,27 @@
           
             
        
-        
+        <form:form commandName="uzytkownik" method="POST" action="register.htm">
+            <form:hidden path="id"/>
     	<form role="form">
   <div class="form-group">
-    <label for="email">Imię:</label>
-                ${rozmowca.imie}
+    <label for="text">Login:</label>
+      <form:input path="login" placeholder="Login" required="true" type="text" class="form-control" /><form:errors path="login" />
   </div>
   <div class="form-group">
-    <label for="pwd">Nazwisko:</label>
-   ${rozmowca.nazwisko}
+    <label for="pwd">Hasło:</label>
+    <form:input path="haslo"  type="password" class="form-control" placeholder="Hasło" required="true"/><form:errors path="haslo"/>
   </div>
    <div class="form-group">
-    <label for="pwd">Data urodzenia:</label>
-   ${rozmowca.dataurodzenia}
+    <label for="email">Email:</label>
+<form:input class="form-control" id="email" path="email" type="text" placeholder="Email" required="true"/><form:errors path="email"/>
   </div>
-<div class="form-group">
-  <label for="comment">Opis:</label>
-${rozmowca.opis}
-</div>
-<div class="form-group">
-  <label for="comment">Odbyte:</label>
-${rozmowca.odbyte}
-</div>
-<div class="form-group">
-  <label for="comment">Wygrane:</label>
-${rozmowca.wygrane}
-</div>
-<div class="form-group">
-  <label for="comment">Ranking:</label>
-${rozmowca.ranking}
-</div>
-<div class="form-group">
-  <label for="comment">Procent:</label>
-${rozmowca.wygrane}/${rozmowca.odbyte}
-</div>
+   
 
+       <c:choose>  <c:when test="${not empty param['id']}"><form:button type="submit" class="btn btn-success">Zapisz</form:button></c:when><c:otherwise><form:button type="submit" class="btn btn-success">Zarejestruj się</form:button></c:otherwise></c:choose>
+   </div>
    </form>
-      
+         </form:form>
 
   </div>
  
@@ -167,7 +152,7 @@ ${rozmowca.wygrane}/${rozmowca.odbyte}
      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" ></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
  
   </body>
 </html>

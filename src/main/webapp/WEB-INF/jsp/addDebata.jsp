@@ -115,7 +115,7 @@
   <hr>
 
   <h2>Rozmówcy</h2>
- <form:select items="${rozmowcy}" path="unused" class="form-control" itemValue="id" itemLabel="nazwisko"></form:select></br>
+ <form:select items="${rozmowcy}" path="rozmowca" class="form-control" itemValue="id" itemLabel="nazwisko"></form:select></br>
 <button id="dodajrozmowce" align="right" class="btn btn-success" type="button" value="">Dodaj rozmówce</button>
 <div id="kontenerrozmowcow">
 
@@ -216,7 +216,7 @@
 		var i=0;
 		$(document).ready(function() {
 			$("#dodajrozmowce").click(function(e){
-				utworzRozmowce(i++, $("#unused").val(), $("#unused option:selected").text())
+				utworzRozmowce(i++, $("#rozmowca").val(), $("#rozmowca option:selected").text())
 			})
 		})
 	</script>

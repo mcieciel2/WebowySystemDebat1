@@ -6,6 +6,7 @@
 package pl.com.softproject.spring.crm.web.model;
 
 import dto.RozmowcaDto;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -47,6 +48,16 @@ public class Rozmowca {
     private int wygrane;
     @Column
     private int ranking;
+    @Column
+    private byte[] zdjecie;
+
+    public byte[] getZdjecie() {
+        return zdjecie;
+    }
+
+    public void setZdjecie(byte[] zdjecie) {
+        this.zdjecie = zdjecie;
+    }
 
     @OneToMany(mappedBy = "rozmowca", cascade = CascadeType.ALL)
     //@JoinColumn(name = "debata_id")
@@ -65,7 +76,7 @@ public class Rozmowca {
         debaty = new ArrayList();
     }
 
-    public Rozmowca(RozmowcaDto rozmowca) {
+    public Rozmowca(RozmowcaDto rozmowca) throws IOException {
         debaty = new ArrayList();
         imie = rozmowca.getImie();
         nazwisko = rozmowca.getNazwisko();
@@ -79,6 +90,10 @@ public class Rozmowca {
             Logger.getLogger(Debata.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+        zdjecie = rozmowca.getZdjecie().getBytes();
+        odbyte = 0;
+        wygrane = 0;
+        ranking = 0;
     }
 
     public Integer getId() {

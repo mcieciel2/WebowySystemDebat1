@@ -1,4 +1,4 @@
-package controller;
+package pl.com.softproject.spring.crm.web.controller;
 
 
 import java.util.Date;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import dao.KomentarzDAO;
+import pl.com.softproject.spring.crm.web.dao.KomentarzDAO;
 import pl.com.softproject.spring.crm.web.model.Komentarz;
 
 

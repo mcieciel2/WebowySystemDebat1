@@ -25,11 +25,11 @@
         
     <security:authentication-manager alias="myAuthManager">
         <security:authentication-provider>
-            <!--security:jdbc-user-service data-source-ref="dataSource" /-->
-            <security:user-service>
-                <security:user name="admin" password="test.11" authorities="ROLE_USER,ROLE_ADMIN" />
-                <security:user name="user" password="user" authorities="ROLE_USER" />
-            </security:user-service>
+            <security:jdbc-user-service data-source-ref="dataSource" users-by-username-query=
+					"select login, haslo, enabled from uzytkownik where login=?" 
+				authorities-by-username-query=
+					"select login, rola from uzytkownik where login =?  " />
+            
         </security:authentication-provider>
     </security:authentication-manager>
 		    
