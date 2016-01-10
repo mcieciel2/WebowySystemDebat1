@@ -39,6 +39,8 @@ public class Uzytkownik {
     private String rola;
     @Column
     private int enabled;
+    @Column
+    private String zdjecie;
 
     public int getEnabled() {
         return enabled;
@@ -58,8 +60,6 @@ public class Uzytkownik {
     public void setZdjecie(String zdjecie) {
         this.zdjecie = zdjecie;
     }
-    @Column
-    private String zdjecie;
 
     public Integer getId() {
         return id;

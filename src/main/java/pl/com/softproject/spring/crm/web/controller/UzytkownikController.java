@@ -2,11 +2,13 @@ package pl.com.softproject.spring.crm.web.controller;
 
 import dto.UzytkownikDto;
 import java.io.IOException;
+import java.security.Principal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import pl.com.softproject.spring.crm.web.dao.UzytkownikDAO;
 import pl.com.softproject.spring.crm.web.model.Uzytkownik;
@@ -40,6 +42,50 @@ public class UzytkownikController {
             uzytkownikDAO.save(uzytkownik);
             return "redirect:admin.htm";
         }
+    }
+
+    @RequestMapping("/profil")
+    public ModelAndView profil(@RequestParam int id, Principal principal) {
+        String username = principal.getName();
+
+        Uzytkownik uzytkownik = uzytkownikDAO.findOne(id);
+        if (uzytkownik.getLogin().equals(username)) {
+            ModelAndView model = new ModelAndView("profil");
+            model.addObject("uzytkownik", uzytkownik);
+            return model;
+        } else {
+            return new ModelAndView("redirect:register.htm");
+        }
+
+    }
+
+    @RequestMapping("/editu")
+    public ModelAndView editu(@RequestParam int id) {
+
+        ModelAndView model = new ModelAndView("editUzytkownik");
+
+        Uzytkownik uzytkownik = uzytkownikDAO.findOne(id);
+        model.addObject("uzytkownik", uzytkownik);
+
+        return model;
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public ModelAndView login(@RequestParam(value = "error", required = false) String error,
+            @RequestParam(value = "logout", required = false) String logout) {
+
+        ModelAndView model = new ModelAndView();
+        if (error != null) {
+            model.addObject("error", "Invalid username and password!");
+        }
+
+        if (logout != null) {
+            model.addObject("msg", "You've been logged out successfully.");
+        }
+        model.setViewName("login");
+
+        return model;
+
     }
 
     /*   
@@ -79,18 +125,7 @@ public class UzytkownikController {
         
      }
     
-     @RequestMapping("edit")
-     public ModelAndView edit(@RequestParam int id) {
-        
-     ModelAndView model = new ModelAndView("addUzytkownik");
-        
-     Uzytkownik uzytkownik = uzytkownikDAO.findOne(id);
-     model.addObject("uzytkownik", uzytkownik);
-      
-   
-        
-     return model;
-     }
+
     
     
      @RequestMapping("/search")

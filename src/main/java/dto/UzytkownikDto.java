@@ -5,8 +5,6 @@
  */
 package dto;
 
-import org.springframework.web.multipart.MultipartFile;
-
 /**
  *
  * @author Marcin
@@ -19,6 +17,9 @@ public class UzytkownikDto {
     private String login;
     private String haslo;
     private String email;
+    private String zdjecie;
+    private int rola;
+    private String enabled;
 
     public String getEmail() {
         return email;
@@ -68,11 +69,11 @@ public class UzytkownikDto {
         this.haslo = haslo;
     }
 
-    public MultipartFile getZdjecie() {
+    public String getZdjecie() {
         return zdjecie;
     }
 
-    public void setZdjecie(MultipartFile zdjecie) {
+    public void setZdjecie(String zdjecie) {
         this.zdjecie = zdjecie;
     }
 
@@ -91,8 +92,5 @@ public class UzytkownikDto {
     public void setEnabled(String enabled) {
         this.enabled = enabled;
     }
-    private MultipartFile zdjecie;
-    private int rola;
-    private String enabled;
 
 }

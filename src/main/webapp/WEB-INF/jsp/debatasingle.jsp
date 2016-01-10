@@ -1,5 +1,5 @@
 
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -79,39 +79,24 @@
  <div class="container">
   <div class="row">
 
-<div class="col-md-6 jumbotron">
-<center><a href="#top"><h3>Robert Gwiazdowski</h3></a></center> 
-        <center><img src="images/gwiazdowski.jpg" height="200px" weight="200px" /></center>
-
-      <center><h1>60%</h1></center> 
- <div class="alert alert-success">
- W ciągu ostatnich 10 czy tam 12 lat partie polityczne wzięły na dotacje miliard złotych i o tym się praktycznie nie mówi, miliard złotych zostało zabranych obywatelom, czyli około stu milionów rocznie. 
-
- <p><icon class="glyphicon glyphicon-plus"></icon>
-<icon class="glyphicon glyphicon-minus"></icon>+12 dotacje  finansowanie</p> 
-<p></p>
-
-</div>
-  <div class="alert alert-info">  Wie pani, że daję słowo honoru nie wpadłem na to w tej chwili, ale już tyle jest tych performanców związanych też z listami, ja już to pokazałem zresztą w wyborach do Sejmiku Dolnośląskiego i rzeczywiście dostałem się z ostatniego miejsca, zbierając najwięcej głosów ze wszystkich bezpartyjnych samorządowców. 
-          <p><icon class="glyphicon glyphicon-plus"></icon>
-<icon class="glyphicon glyphicon-minus"></icon>+5 głosy</p>
-</div>
-    
-  <div class="alert alert-info">Kodeks Wyborczy pozwala mi na wystawienie jedynie 920 kandydatów. 
-<p><icon class="glyphicon glyphicon-plus"></icon>
-<icon class="glyphicon glyphicon-minus"></icon>+12 dotacje, finansowanie</p> 
-
-  
-
-
-
-
-
-
-
+      <c:forEach var="rozmowca" items="${debata.getRozmowcy()}">
           
-        </div>
-</div>
+        <div class="col-md-6 jumbotron">
+          <center><a href="#top"><h3>${rozmowca.rozmowca.imie}</h3></a></center> 
+                  <center><img src="images/gwiazdowski.jpg" height="200px" weight="200px" /></center>
+
+                <center><h1>60%</h1></center> 
+                    <c:forEach var="argument" items="${rozmowca.getArgument()}">
+                        <div class="alert alert-success">
+                        ${argument.tresc}
+                        <p><a href="plus.htm?id=${argument.id}&debataId=${debata.id}"><icon class="glyphicon glyphicon-plus"></icon></a>
+                        <a href="minus.htm?id=${argument.id}&debataId=${debata.id}"><icon class="glyphicon glyphicon-minus"></icon></a> ${argument.plus} ${argument.minus} dotacje  finansowanie</p> 
+                       <p></p>
+
+                       </div>
+                    </c:forEach>
+       </div>
+      </c:forEach>
  <div class="col-md-6 jumbotron">
   <center><a href="#top"><h3>Piotr Szumlewicz</h3></a></center>
       <center> <img src="images/szumlewicz.jpg" height="200px" weight="200px" /></center> 

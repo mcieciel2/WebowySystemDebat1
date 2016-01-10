@@ -24,6 +24,7 @@ public class DebataDto {
     private String data;
     private String video;
     private Integer kategoria;
+
     ArrayList<RozmowcawDebacieDto> listarozmowcow;
 
     private Integer rozmowca;

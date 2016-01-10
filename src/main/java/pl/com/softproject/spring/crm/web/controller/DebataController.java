@@ -28,6 +28,19 @@ public class DebataController {
         model.addObject("debata", debata);
 
         debata.setWyswietlenia(debata.getWyswietlenia() + 1);
+        debataDAO.save(debata);
+        debata.setVideo(debata.getVideo().replace("watch?v=", "embed/"));
         return model;
     }
+
+    @RequestMapping("/index")
+    public ModelAndView index() {
+
+        ModelAndView model = new ModelAndView("index");
+
+        model.addObject("debaty", debataDAO.findAll());
+
+        return model;
+    }
+
 }

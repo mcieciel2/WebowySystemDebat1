@@ -49,16 +49,15 @@ public class Rozmowca {
     @Column
     private int ranking;
     @Column
-    private byte[] zdjecie;
+    private String zdjecie;
 
-    public byte[] getZdjecie() {
+    public String getZdjecie() {
         return zdjecie;
     }
 
-    public void setZdjecie(byte[] zdjecie) {
+    public void setZdjecie(String zdjecie) {
         this.zdjecie = zdjecie;
     }
-
     @OneToMany(mappedBy = "rozmowca", cascade = CascadeType.ALL)
     //@JoinColumn(name = "debata_id")
     List<RozmowcawDebacie> debaty;
@@ -90,7 +89,7 @@ public class Rozmowca {
             Logger.getLogger(Debata.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        zdjecie = rozmowca.getZdjecie().getBytes();
+        //   zdjecie = rozmowca.getZdjecie().getBytes();
         odbyte = 0;
         wygrane = 0;
         ranking = 0;

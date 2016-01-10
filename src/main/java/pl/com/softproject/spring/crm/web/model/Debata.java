@@ -86,6 +86,7 @@ public class Debata {
     }
 
     public Debata(DebataDto debata) {
+
         rozmowcy = new ArrayList();
         tytul = debata.getTytul();
         opis = debata.getOpis();
@@ -99,8 +100,9 @@ public class Debata {
         }
         video = debata.getVideo();
         kategoria = new Kategoria();
-        kategoria.setId(debata.getKategoria());
+        kategoria.setId(debata.getId());
         wyswietlenia = 0;
+
     }
 
     public void powiekszwyswietlenia() {

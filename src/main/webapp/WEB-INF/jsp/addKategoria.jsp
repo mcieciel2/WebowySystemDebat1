@@ -45,10 +45,10 @@
              
             </div>
             <div class="form-group">
-          <a href="paneladmina.html" role="button" type="submit" class="btn btn-success">Panel Administracyjny</a>
+          <a href="<c:url value="/admin/admin.htm"/>" role="button" type="submit" class="btn btn-success">Panel Administracyjny</a>
             </div>
              <div class="form-group">
-          <a href="index.html" role="button" type="submit" class="btn btn-danger">Wyloguj</a>
+          <a href="/login?logout" role="button" type="submit" class="btn btn-danger">Wyloguj</a>
             </div>
           </form>
         </div><!--/.navbar-collapse -->

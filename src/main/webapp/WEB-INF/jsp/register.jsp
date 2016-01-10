@@ -56,11 +56,11 @@
         <div id="navbar" class="navbar-collapse collapse">
             <form class="navbar-form navbar-right">
             <div class="form-group">
-            <a href="profil.html" role="button" type="submit" class="btn btn-success">Mój profil</a>
+            <a href="<c:url value="/admin/profil.htm"/>" role="button" type="submit" class="btn btn-success">Mój profil</a>
              
             </div>
             <div class="form-group">
-          <a href="paneladmina.html" role="button" type="submit" class="btn btn-success">Panel Administracyjny</a>
+          <a href="<c:url value="/admin/admin.htm"/>" role="button" type="submit" class="btn btn-success">Panel Administracyjny</a>
             </div>
              <div class="form-group">
           <a href="index.html" role="button" type="submit" class="btn btn-danger">Wyloguj</a>
@@ -119,7 +119,7 @@
   </div>
    
 
-       <c:choose>  <c:when test="${not empty param['id']}"><form:button type="submit" class="btn btn-success">Zapisz</form:button></c:when><c:otherwise><form:button type="submit" class="btn btn-success">Zarejestruj się</form:button></c:otherwise></c:choose>
+    <form:button type="submit" class="btn btn-success">Zarejestruj się</form:button>
    </div>
    </form>
          </form:form>

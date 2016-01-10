@@ -12,6 +12,8 @@
 <!DOCTYPE html>
 <html lang="pl">
   <head>
+    
+      
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,14 +45,14 @@
         <div id="navbar" class="navbar-collapse collapse">
            <form class="navbar-form navbar-right">
             <div class="form-group">
-            <a href="profil.html" role="button" type="submit" class="btn btn-success">Mój profil</a>
+            <a href="/profil.htm" role="button" type="submit" class="btn btn-success">Mój profil</a>
              
             </div>
             <div class="form-group">
-          <a href="paneladmina.html" role="button" type="submit" class="btn btn-success">Panel Administracyjny</a>
+          <a href="<c:url value="/admin/admin.htm"/>" role="button" type="submit" class="btn btn-success">Panel Administracyjny</a>
             </div>
              <div class="form-group">
-          <a href="index.html" role="button" type="submit" class="btn btn-danger">Wyloguj</a>
+          <a href="<c:url value="/logout"/>" role="button" type="submit" class="btn btn-danger">Wyloguj</a>
             </div>
           </form>
         </div><!--/.navbar-collapse -->
@@ -221,6 +223,6 @@
 		})
 	</script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" ></script>
   </body>
 </html>

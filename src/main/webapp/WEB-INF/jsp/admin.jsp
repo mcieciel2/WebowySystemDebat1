@@ -46,8 +46,8 @@
             <div class="form-group">
           <a href="paneladmina.html" role="button" type="submit" class="btn btn-success">Panel Administracyjny</a>
             </div>
-             <div class="form-group">
-          <a href="index.html" role="button" type="submit" class="btn btn-danger">Wyloguj</a>
+              <div class="form-group">
+          <a href="<c:url value="/logout"/>" role="button" type="submit" class="btn btn-danger">Wyloguj</a>
             </div>
           </form>
         </div><!--/.navbar-collapse -->
@@ -105,13 +105,13 @@
                     <td> <a href="<c:url value="/singled.htm"/>?id=${debata.id}">${debata.id}</a></td>
                     <td>${debata.tytul}</td>
                     <td>${debata.data}</td>
-                    <td><a href="<c:url value="/editd.htm"/>?id=${debata.id}">Edytuj</a>/<a href="<c:url value="/deleted.htm"/>?id=${debata.id}">Usuń</a></td>
+                    <td><a href="<c:url value="/admin/editd.htm"/>?id=${debata.id}">Edytuj</a>/<a href="<c:url value="/admin/deleted.htm"/>?id=${debata.id}">Usuń</a></td>
                 </tr>
             </c:forEach>
   </tbody>
 </table>
 
-<a href="<c:url value="/addd.htm"/>" role="button" type="submit" class="btn btn-success">Dodaj debatę</a>
+<a href="<c:url value="/admin/addd.htm"/>" role="button" type="submit" class="btn btn-success">Dodaj debatę</a>
 
   </div>
    </div>
@@ -136,17 +136,17 @@
   <tbody>
        <c:forEach items="${rozmowcy}" var="rozmowca">
                 <tr>
-                    <td> <a href="<c:url value="/singler.htm"/>?id=${rozmowca.id}">${rozmowca.id}</a></td>
+                    <td> <a href="<c:url value="/admin/singler.htm"/>?id=${rozmowca.id}">${rozmowca.id}</a></td>
                     <td>${rozmowca.imie}</td>
                     <td>${rozmowca.nazwisko}</td>
-                    <td><a href="<c:url value="/editr.htm"/>?id=${rozmowca.id}">Edytuj</a>/<a href="<c:url value="/deleter.htm"/>?id=${rozmowca.id}">Usuń</a></td>
+                    <td><a href="<c:url value="/admin/editr.htm"/>?id=${rozmowca.id}">Edytuj</a>/<a href="<c:url value="/admin/deleter.htm"/>?id=${rozmowca.id}">Usuń</a></td>
                 </tr>
                 
             </c:forEach>
   </tbody>
 </table>
 </div>
- <a href="<c:url value="/addr.htm"/>" role="button" type="submit" class="btn btn-success">Dodaj rozmówcę</a>
+ <a href="<c:url value="/admin/addr.htm"/>" role="button" type="submit" class="btn btn-success">Dodaj rozmówcę</a>
 
 
 
@@ -171,7 +171,7 @@
                     <td> <a href="<c:url value="/uzytkownik/edit.htm"/>?id=${uzytkownik.id}">${uzytkownik.id}</a></td>
                     <td>${uzytkownik.login}</td>
                     <td>${uzytkownik.imie}</td>
-                    <td><a href="<c:url value="/deleteu.htm"/>?id=${uzytkownik.id}">Usuń</a></td>
+                    <td><a href="<c:url value="/admin/deleteu.htm"/>?id=${uzytkownik.id}">Usuń</a></td>
                 </tr>
             </c:forEach>
   </tbody>
@@ -204,14 +204,14 @@
   <tbody>
         <c:forEach items="${kategorie}" var="kategoria">
                 <tr>
-                    <td> <a href="<c:url value="/editk.htm"/>?id=${kategoria.id}">${kategoria.id}</a></td>
+                    <td> <a href="<c:url value="/admin/editk.htm"/>?id=${kategoria.id}">${kategoria.id}</a></td>
                     <td>${kategoria.nazwa}</td>
-                    <td><a href="<c:url value="/editk.htm"/>?id=${kategoria.id}">Edytuj</a>/<a href="<c:url value="/deletek.htm"/>?id=${kategoria.id}">Usuń</a></td>
+                    <td><a href="<c:url value="/admin/editk.htm"/>?id=${kategoria.id}">Edytuj</a>/<a href="<c:url value="/admin/deletek.htm"/>?id=${kategoria.id}">Usuń</a></td>
                 </tr>
             </c:forEach>
   </tbody>
 </table>
-    <a href="<c:url value="/addk.htm"/>" role="button" type="submit" class="btn btn-success">Dodaj kategorie</a>
+    <a href="<c:url value="/admin/addk.htm"/>" role="button" type="submit" class="btn btn-success">Dodaj kategorie</a>
 
 </div>
 
@@ -230,15 +230,15 @@
   <tbody>
       <c:forEach items="${terminy}" var="termin">
                 <tr>
-                    <td> <a href="<c:url value="/editt.htm"/>?id=${termin.id}">${termin.id}</a></td>
+                    <td> <a href="<c:url value="/admin/editt.htm"/>?id=${termin.id}">${termin.id}</a></td>
                     <td>${termin.nazwa}</td>
                     <td>${termin.kategoria.nazwa}</td>
-                    <td><a href="<c:url value="/editt.htm"/>?id=${termin.id}">Edytuj</a>/<a href="<c:url value="/deletek.htm"/>?id=${termin.id}">Usuń</a></td>
+                    <td><a href="<c:url value="/admin/editt.htm"/>?id=${termin.id}">Edytuj</a>/<a href="<c:url value="/admin/deletek.htm"/>?id=${termin.id}">Usuń</a></td>
                 </tr>
             </c:forEach>
   </tbody>
 </table>
-      <a href="<c:url value="/addt.htm"/>" role="button" type="submit" class="btn btn-success">Dodaj termin</a>
+      <a href="<c:url value="/admin/addt.htm"/>" role="button" type="submit" class="btn btn-success">Dodaj termin</a>
 
 </div>
     
