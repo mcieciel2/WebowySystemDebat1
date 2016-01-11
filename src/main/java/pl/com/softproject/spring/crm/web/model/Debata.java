@@ -48,6 +48,28 @@ public class Debata {
     @Column
     private Integer wyswietlenia;
 
+    @Column
+    private Double ocena;
+
+    public Double getOcena() {
+        return ocena;
+    }
+
+    public void setOcena(Double ocena) {
+        this.ocena = ocena;
+    }
+
+    public Integer getLiczbaocen() {
+        return liczbaocen;
+    }
+
+    public void setLiczbaocen(Integer liczbaocen) {
+        this.liczbaocen = liczbaocen;
+    }
+
+    @Column
+    private Integer liczbaocen;
+
     public Integer getWyswietlenia() {
         return wyswietlenia;
     }
@@ -102,6 +124,8 @@ public class Debata {
         kategoria = new Kategoria();
         kategoria.setId(debata.getId());
         wyswietlenia = 0;
+        ocena = 0.0;
+        liczbaocen = 0;
 
     }
 

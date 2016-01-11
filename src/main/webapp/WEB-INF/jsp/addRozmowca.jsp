@@ -102,29 +102,29 @@
           
             
        
-        <form:form commandName="rozmowca" method="POST" action="addr.htm" enctype="multipart/form-data">
+        <form:form commandName="rozmowca" method="POST" action="addr.htm">
             <form:hidden path="id"/>
     	<form role="form">
   <div class="form-group">
-    <label for="email">Imię:</label>
+    <label for="text">Imię:</label>
                 <form:input path="imie" placeholder="Imię" required="true" type="text" class="form-control" /><form:errors path="imie" />
   </div>
   <div class="form-group">
-    <label for="pwd">Nazwisko:</label>
+    <label for="text">Nazwisko:</label>
     <form:input path="nazwisko"  type="text" class="form-control" placeholder="Nazwisko" required="true"/><form:errors path="nazwisko"/>
   </div>
    <div class="form-group">
-    <label for="pwd">Data urodzenia:</label>
+    <label for="text">Data urodzenia:</label>
 <form:input class="form-control" id="dataurodzenia" path="dataurodzenia" type="text" placeholder="Dataurodzenia" required="true"/><form:errors path="dataurodzenia"/>
   </div>
 <div class="form-group">
-  <label for="comment">Opis:</label>
+  <label for="text">Opis:</label>
  <form:input path="opis" placeholder="Opis" required="true" class="form-control"/><form:errors path="opis"/>
 </div>
    <div class="form-group">
    
-    <label>Zdjęcie</label>
-      <label class = "sr-only" for = "inputfile">Avatar:</label>
+ <label for="text">Zdjęcie:</label>
+     
     <form:input path="zdjecie" placeholder="Zdjecie" required="true" class="form-control"/><form:errors path="zdjecie"/>
 
    </div>

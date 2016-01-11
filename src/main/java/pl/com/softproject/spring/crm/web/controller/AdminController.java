@@ -75,7 +75,7 @@ public class AdminController {
         } else {
             System.out.println(termin);
             terminDAO.save(termin);
-            return "redirect:/admin.htm";
+            return "redirect:/admin/admin.htm";
         }
     }
 
@@ -121,7 +121,7 @@ public class AdminController {
         } else {
             System.out.println(kategoria);
             kategoriaDAO.save(kategoria);
-            return "redirect:/admin.htm";
+            return "redirect:/admin/admin.htm";
         }
     }
 
@@ -164,10 +164,10 @@ public class AdminController {
         if (binding.hasErrors()) {
             return "addRozmowca";
         } else {
-            System.out.println(rozmowcadto);
+            System.out.println(rozmowcadto.toString());
             Rozmowca rozmowca = new Rozmowca(rozmowcadto);
             rozmowcaDAO.save(rozmowca);
-            return "redirect:admin.htm";
+            return "redirect:admin/admin.htm";
         }
     }
 
@@ -252,6 +252,7 @@ public class AdminController {
             rozmowcawdebacie.setRozmowca(rozmowca);
             utworzonaDebata.getRozmowca().add(rozmowcawdebacie);
             rozmowca.getDebaty().add(rozmowcawdebacie);
+            rozmowca.setOdbyte(rozmowca.getOdbyte() + 1);
             for (String argumentZFormularza : rf.getArgument()) {
                 Argument argument = new Argument();
                 argument.setRozmowcawdebacie(rozmowcawdebacie);
@@ -262,7 +263,7 @@ public class AdminController {
 
         debataDAO.save(utworzonaDebata);
 
-        return "redirect:admin.htm";
+        return "redirect:admin/admin.htm";
     }
 
     /* @RequestMapping("/admin")
@@ -278,12 +279,11 @@ public class AdminController {
     @RequestMapping("/editd")
     public ModelAndView editd(@RequestParam int id) {
 
-        ModelAndView model = new ModelAndView("addDebata");
+        ModelAndView model = new ModelAndView("editDebata");
 
         Debata debata = debataDAO.findOne(id);
         model.addObject("debata", debata);
         model.addObject("kategorie", kategoriaDAO.findAll());
-        model.addObject("rozmowcy", rozmowcaDAO.findAll());
 
         return model;
     }

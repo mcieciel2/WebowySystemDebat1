@@ -1,7 +1,7 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html>
 <html lang="pl">
   <head>
@@ -61,13 +61,9 @@
    <iframe width="560" height="315" src="${debata.video}" frameborder="0" allowfullscreen></iframe>
 
     </center>
-    <center><h4>Liczba wyświetleń: ${debata.wyswietlenia} | Ocena Debaty: 3,87                      <label for="comment">Oceń debatę: <select class="form-control">
-  <option>1</option>
-  <option>2</option>
-  <option>3</option>
-  <option>4</option>
-  <option>5</option>
-</select></label> </h4> </center>
+    <center><h4>Liczba wyświetleń: ${debata.wyswietlenia} | Ocena Debaty: ${debata.ocena}               
+            
+        </h4> </center>
 <center><h4>Kategoria: ${debata.kategoria.nazwa}</h4></center>
     <center><h4>Opis: ${debata.opis} </h4></center>
 </div>

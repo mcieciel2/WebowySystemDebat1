@@ -64,7 +64,7 @@
       <!-- Example row of columns -->
       <div class="row">
       <h1>Najnowsze:</h1>
-        <c:forEach var="debata" items="${debaty}">
+        <c:forEach var="debata" items="${najnowsze}">
         <div class="col-md-4">
         <img src="${debata.video}" />
           <a href="<c:url value="/singled.htm"/>?id=${debata.id}"><h2>${debata.tytul}</h2></a>
@@ -83,27 +83,15 @@
       <!-- Example row of columns -->
       <div class="row">
       <h1>Najpopularniejsze:</h1>
+     <c:forEach var="debata" items="${najpopularniejsze}">
         <div class="col-md-4">
-        <img src="images/1.webp" />
-           <a href="#top"> <h3>Debata liderów</h3></a>
-         <p>5000 wyświetleń </p>
-          <p>2015-11-10</p>
-          <p><a class="btn btn-default" href="#top" role="button">Wyświetl »</a></p>
+        <img src="${debata.video}" />
+          <a href="<c:url value="/singled.htm"/>?id=${debata.id}"><h2>${debata.tytul}</h2></a>
+          <p>${debata.wyswietlenia} wyświetleń </p>
+          <p>${debata.data}</p>
+          <p><a class="btn btn-default" href="<c:url value="/singled.htm"/>?id=${debata.id}" role="button">Wyświetl »</a></p>
         </div>
-        <div class="col-md-4">
-        <img src="images/2.webp" />
-           <a href="#top"> <h3>Andrzej Duda vs Andrzej Duda</h3></a>
-          <p>4000 wyświetleń </p>
-          <p>2015-11-01</p>
-          <p><a class="btn btn-default" href="#top" role="button">Wyświetl »</a></p>
-       </div>
-        <div class="col-md-4">
-        <img src="images/3.webp" />
-         <a href="#top"> <h3>Debata numer 5</h3></a>
-          <p>3000 wyświetleń </p>
-          <p>2015-11-03</p>
-          <p><a class="btn btn-default" href="#top" role="button">Wyświetl »</a></p>
-        </div>
+         </c:forEach>
       </div>
 </div>
       <hr>
@@ -111,23 +99,17 @@
       <!-- Example row of columns -->
       <div class="row">
       <h1>Najlepsi rozmówcy:</h1>
-        <div class="col-md-4">
-        <img src="images/bosak.jpg" height="300px" width="300px"/>
-          <h2>Krzysiu Bosak</h2>
-         
-          <p><a class="btn btn-default" href="#top" role="button">Szczegóły »</a></p>
+      <c:forEach var="rozmowca" items="${najlepsi}">
+           <div class="col-md-4">
+        <img src="${rozmowca.zdjecie}" height="300px" width="300px"/>
+          <h2>${rozmowca.imie} ${rozmowca.nazwisko}</h2>
+         <h2>Wygrane: ${rozmowca.wygrane} </h2>
+          <p><a class="btn btn-default" href="<c:url value="/singler.htm"/>?id=${rozmowca.id}" role="button">Szczegóły »</a></p>
         </div>
-        <div class="col-md-4">
-        <img src="images/zandberg.jpg" height="300px" width="300px"/>
-          <h2>Adrian Marx</h2>
           
-          <p><a class="btn btn-default" href="#top" role="button">Szczegóły »</a></p>
-       </div>
-        <div class="col-md-4">
-        <img src="images/kaminski.jpg" height="300px" width="300px" />
-          <h2>Mariusz Kamiński</h2>
-          <p><a class="btn btn-default" href="#top" role="button">Szczegóły »</a></p>
-        </div>
+      </c:forEach>
+       
+     
       </div>
       </div>
 
