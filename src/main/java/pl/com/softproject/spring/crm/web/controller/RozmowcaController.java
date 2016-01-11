@@ -1,5 +1,8 @@
 package pl.com.softproject.spring.crm.web.controller;
 
+import Komparator.KomparatorRozmowca;
+import java.util.Collections;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,4 +27,26 @@ public class RozmowcaController {
 
         return model;
     }
+
+    @RequestMapping("/ranking")
+    public ModelAndView ranking() {
+
+        ModelAndView model = new ModelAndView("ranking");
+        Rozmowca rozmowca;
+        List ranking = rozmowcaDAO.findAll();
+        KomparatorRozmowca kompr = new KomparatorRozmowca();
+        Collections.sort(ranking, kompr);
+
+        for (int i = 0; i < ranking.size(); i++) {
+
+            rozmowca = (Rozmowca) ranking.get(i);
+            rozmowca.setRanking(i + 1);
+            rozmowcaDAO.save(rozmowca);
+        }
+
+        model.addObject("ranking", ranking);
+
+        return model;
+    }
+
 }

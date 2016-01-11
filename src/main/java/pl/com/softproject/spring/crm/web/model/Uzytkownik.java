@@ -7,11 +7,14 @@ package pl.com.softproject.spring.crm.web.model;
 
 import dto.UzytkownikDto;
 import java.io.IOException;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import org.hibernate.validator.constraints.Email;
 
 /**
@@ -41,6 +44,10 @@ public class Uzytkownik {
     private int enabled;
     @Column
     private String zdjecie;
+
+    @OneToMany(mappedBy = "uzytkownik", cascade = CascadeType.ALL)
+    //@JoinColumn(name = "debata_id")
+    List<WybraneTerminy> terminy;
 
     public int getEnabled() {
         return enabled;

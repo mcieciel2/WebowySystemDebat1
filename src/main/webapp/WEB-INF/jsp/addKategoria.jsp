@@ -27,7 +27,7 @@
     <![endif]-->
   </head>
   <body>
-      <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -36,25 +36,42 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#top">Debata.pl</a>
+          <a class="navbar-brand" href="<c:url value="/index.htm"/>">Debata.pl</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-           <form class="navbar-form navbar-right">
+          <form class="navbar-form navbar-right">
             <div class="form-group">
-            <a href="profil.html" role="button" type="submit" class="btn btn-success">Mój profil</a>
-             
-            </div>
-            <div class="form-group">
-          <a href="<c:url value="/admin/admin.htm"/>" role="button" type="submit" class="btn btn-success">Panel Administracyjny</a>
-            </div>
-             <div class="form-group">
-          <a href="/login?logout" role="button" type="submit" class="btn btn-danger">Wyloguj</a>
-            </div>
-          </form>
+         
+			
+     
+        
+           <c:choose>
+    <c:when test="${pageContext.request.userPrincipal.name != null}">
+     
+        <font color="white"> Witaj, ${pageContext.request.userPrincipal.name}! </font>
+                        <a href="<c:url value="/profil2.htm"/>?login=${pageContext.request.userPrincipal.name}" role=button type="submit" class="btn btn-warning">Mój Profil</a>
+                                  <c:if test="${pageContext.request.isUserInRole('ROLE_ADMIN')}">
+
+        <a href="<c:url value="/admin/admin.htm"/>" role=button type="submit" class="btn btn-warning">Panel administracyjny</a>
+                    
+
+    </c:if>
+              
+                            <a href="<c:url value="/login.htm"/>" role=button type="submit" class="btn btn-danger">Wyloguj</a>
+			
+        <br />
+    </c:when>    
+    <c:otherwise>
+          <a href="<c:url value="/login.htm"/>" role=button type="submit" class="btn btn-success">Zaloguj</a>
+          <a href="<c:url value="/register.htm"/>" role=button type="submit" class="btn btn-success">Zarejestruj się</a>
+      
+        <br />
+    </c:otherwise>
+</c:choose>
+            </form>
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
-
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
    

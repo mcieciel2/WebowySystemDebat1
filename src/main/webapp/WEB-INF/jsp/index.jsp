@@ -25,7 +25,7 @@
     <![endif]-->
   </head>
   <body>
-      <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -34,18 +34,39 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#top">Debata.pl</a>
+          <a class="navbar-brand" href="<c:url value="/index.htm"/>">Debata.pl</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-form navbar-right">
             <div class="form-group">
-              <input type="text" placeholder="Login" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Hasło" class="form-control">
-            </div>
-           <a href="zalogowany.html" role=button type="submit" class="btn btn-success">Zaloguj</a>
-          </form>
+         
+			
+     
+        
+           <c:choose>
+    <c:when test="${pageContext.request.userPrincipal.name != null}">
+     
+        <font color="white"> Witaj, ${pageContext.request.userPrincipal.name}! </font>
+                        <a href="<c:url value="/profil2.htm"/>?login=${pageContext.request.userPrincipal.name}" role=button type="submit" class="btn btn-warning">Mój Profil</a>
+                                  <c:if test="${pageContext.request.isUserInRole('ROLE_ADMIN')}">
+
+        <a href="<c:url value="/admin/admin.htm"/>" role=button type="submit" class="btn btn-warning">Panel administracyjny</a>
+                    
+
+    </c:if>
+              
+                            <a href="<c:url value="/login.htm"/>" role=button type="submit" class="btn btn-danger">Wyloguj</a>
+			
+        <br />
+    </c:when>    
+    <c:otherwise>
+          <a href="<c:url value="/login.htm"/>" role=button type="submit" class="btn btn-success">Zaloguj</a>
+          <a href="<c:url value="/register.htm"/>" role=button type="submit" class="btn btn-success">Zarejestruj się</a>
+      
+        <br />
+    </c:otherwise>
+</c:choose>
+            </form>
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
@@ -55,9 +76,8 @@
       <div class="container">
         <h1>Witaj na stronie!</h1>
         <p>Webowy System Oceny debat politycznych z modułem klasyfikacji argumentów.</p>
-        <p>Nie masz konta?    </p>
-        <p><a class="btn btn-primary btn-lg" href="rejestracja.html" role="button">Zarejestruj się »</a></p>
-      </div>
+        </div>
+     
     </div>
 
     <div class="container">

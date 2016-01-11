@@ -3,6 +3,7 @@ package pl.com.softproject.spring.crm.web.controller;
 import dto.UzytkownikDto;
 import java.io.IOException;
 import java.security.Principal;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -59,6 +60,34 @@ public class UzytkownikController {
 
     }
 
+    @RequestMapping("/profil2")
+    public ModelAndView profil2(@RequestParam String login, Principal principal) {
+        String username = principal.getName();
+
+        List lista = uzytkownikDAO.findAll();
+
+        Uzytkownik uzytkownik = null;
+        Uzytkownik temp;
+        for (int i = 0; i < lista.size(); i++) {
+
+            temp = (Uzytkownik) lista.get(i);
+            if (temp.getLogin().equals(login)) {
+
+                uzytkownik = temp;
+            }
+
+        }
+
+        if (uzytkownik != null && uzytkownik.getLogin().equals(username)) {
+            ModelAndView model = new ModelAndView("profil");
+            model.addObject("uzytkownik", uzytkownik);
+            return model;
+        } else {
+            return new ModelAndView("redirect:register.htm");
+        }
+
+    }
+
     @RequestMapping("/editu")
     public ModelAndView editu(@RequestParam int id) {
 
@@ -76,11 +105,11 @@ public class UzytkownikController {
 
         ModelAndView model = new ModelAndView();
         if (error != null) {
-            model.addObject("error", "Invalid username and password!");
+            model.addObject("error", "Nieprawidłowa nazwa użytkownika lub hasło!");
         }
 
         if (logout != null) {
-            model.addObject("msg", "You've been logged out successfully.");
+            model.addObject("msg", "Zalogowano pomyślnie.");
         }
         model.setViewName("login");
 

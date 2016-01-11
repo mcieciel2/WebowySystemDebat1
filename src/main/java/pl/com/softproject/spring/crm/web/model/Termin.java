@@ -5,6 +5,7 @@
  */
 package pl.com.softproject.spring.crm.web.model;
 
+import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,6 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -20,16 +22,28 @@ import javax.persistence.ManyToOne;
  */
 @Entity
 public class Termin {
-    
-       @Id
+
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-     @Column
-     private String nazwa;
-     
-      @ManyToOne (cascade =  CascadeType.REMOVE)
+    @Column
+    private String nazwa;
+
+    @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "kategoria_id")
-   private Kategoria kategoria;
+    private Kategoria kategoria;
+
+    @OneToMany(mappedBy = "termin", cascade = CascadeType.ALL)
+    // @JoinColumn(name = "rozmowca_id")
+    private List<WybraneTerminy> uzytkownicy;
+
+    public List<WybraneTerminy> getUzytkownicy() {
+        return uzytkownicy;
+    }
+
+    public void setUzytkownicy(List<WybraneTerminy> uzytkownicy) {
+        this.uzytkownicy = uzytkownicy;
+    }
 
     public Integer getId() {
         return id;
@@ -54,5 +68,5 @@ public class Termin {
     public void setKategoria(Kategoria kategoria) {
         this.kategoria = kategoria;
     }
-       
+
 }

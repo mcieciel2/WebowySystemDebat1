@@ -1,38 +1,23 @@
-
 <%-- 
-    Document   : addRozmowca
-    Created on : 2015-11-28, 01:12:59
+    Document   : ranking
+    Created on : 2016-01-11, 17:51:11
     Author     : Marcin
 --%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Rozmówca</title>
-    </head>
-     
-        
-        
-        
-           <head>
-</head>
-           <!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
 <html lang="pl">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>${rozmowca.imie} ${rozmowca.nazwisko}</title>
+    <title>Webowy System debat politycznych z modułem klasyfikacji argumentów</title>
 
     <!-- Bootstrap -->
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" >
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -41,7 +26,6 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  
   <body>
    <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -91,104 +75,51 @@
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
-     
-        <h1>Rozmówca </h1>
+      <div class="container">
+        <h1>Ranking</h1>
         <p>Webowy System Oceny debat politycznych z modułem klasyfikacji argumentów.</p>
-      
-      </div>
+       
+     </div>
     </div>
 
-    <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-      <div>
-
-
-
-            
-            
-
-            
-           <%-- <form:input path="dataurodzenia" type="date" placeholder="Data" required="true"/> <form:errors path="data"/>--%><br/>
-            
-            
-         
-            
-            
-            
-          
-            
-       
-        
-    	<form role="form">
-             <div class="form-group">
-                 <center><img src="${rozmowca.zdjecie}" height="300px"></img></center>
-  </div>
-  <div class="form-group">
-    <label for="email">Imię:</label>
-                ${rozmowca.imie}
-  </div>
-  <div class="form-group">
-    <label for="pwd">Nazwisko:</label>
-   ${rozmowca.nazwisko}
-  </div>
-   <div class="form-group">
-    <label for="pwd">Data urodzenia:</label>
-   ${rozmowca.dataurodzenia}
-  </div>
-<div class="form-group">
-  <label for="comment">Opis:</label>
-${rozmowca.opis}
-</div>
-<div class="form-group">
-  <label for="comment">Odbyte:</label>
-${rozmowca.odbyte}
-</div>
-<div class="form-group">
-  <label for="comment">Wygrane:</label>
-${rozmowca.wygrane}
-</div>
-<div class="form-group">
-  <label for="comment">Ranking:</label>
-${rozmowca.ranking}
-</div>
-<div class="form-group">
-  <label for="comment">Procent:</label>
-${rozmowca.wygrane/rozmowca.odbyte*100}%
-</div>
-
-   </form>
-      
-
-  </div>
  
 
-
-
-
-  
-
-
-
-    </div>
-
-  </div>
-
-
-    
+      <div class="container">
+      <!-- Example row of columns -->
+      
+      <h1>Ranking rozmówców:</h1>
+      <c:forEach var="rozmowca" items="${ranking}">
+           <div class="row">
+                 <div class="col-md-4">
+        <img src="${rozmowca.zdjecie}" height="300px" width="300px"/>
+                 </div>
+                  <div class="col-md-8">
+          <h2>${rozmowca.ranking}.${rozmowca.imie} ${rozmowca.nazwisko}</h2>
+         <h2>Wygrane: ${rozmowca.wygrane} </h2>
+          <h2>Odbyte: ${rozmowca.odbyte} </h2>
+          <h2>Procent wygranych: ${rozmowca.wygrane/rozmowca.odbyte*100}% </h2>
+          <p><a class="btn btn-default" href="<c:url value="/singler.htm"/>?id=${rozmowca.id}" role="button">Szczegóły »</a></p>
+        </div>
+           </div>
+        
+      <hr>
+          
+      </c:forEach>
+       
+     
+      </div>
+      </div>
 
       <hr>
 
       <footer>
-        <p>© Company 2014</p>
+        <p>© Marcin Cięciel - 2016</p>
       </footer>
     </div>
-
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" ></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" ></script>
- 
+    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
