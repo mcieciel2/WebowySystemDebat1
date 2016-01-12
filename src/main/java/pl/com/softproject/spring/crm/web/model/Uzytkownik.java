@@ -49,6 +49,14 @@ public class Uzytkownik {
     //@JoinColumn(name = "debata_id")
     List<WybraneTerminy> terminy;
 
+    public List<WybraneTerminy> getTerminy() {
+        return terminy;
+    }
+
+    public void setTerminy(List<WybraneTerminy> terminy) {
+        this.terminy = terminy;
+    }
+
     public int getEnabled() {
         return enabled;
     }

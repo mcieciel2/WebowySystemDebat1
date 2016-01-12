@@ -42,7 +42,7 @@
   </head>
   
   <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -72,7 +72,7 @@
 
     </c:if>
               
-                            <a href="<c:url value="/login.htm"/>" role=button type="submit" class="btn btn-danger">Wyloguj</a>
+                            <a href="<c:url value="/logout"/>" role=button type="submit" class="btn btn-danger">Wyloguj</a>
 			
         <br />
     </c:when>    
@@ -143,7 +143,7 @@
    
  <label for="text">Zdjęcie:</label>
      
-    <form:input path="zdjecie" placeholder="Zdjecie" required="true" class="form-control"/><form:errors path="zdjecie"/>
+    <form:input type="file" path="zdjecie" placeholder="Zdjecie" required="true" class="form-control"/><form:errors path="zdjecie"/>
 
    </div>
        <c:choose>  <c:when test="${not empty param['id']}"><form:button type="submit" class="btn btn-default">Zapisz</form:button></c:when><c:otherwise><form:button type="submit" class="btn btn-default">Dodaj rozmówce</form:button></c:otherwise></c:choose>

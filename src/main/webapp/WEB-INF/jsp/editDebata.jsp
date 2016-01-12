@@ -55,7 +55,7 @@
 
     </c:if>
               
-                            <a href="<c:url value="/login.htm"/>" role=button type="submit" class="btn btn-danger">Wyloguj</a>
+                            <a href="<c:url value="/logout"/>" role=button type="submit" class="btn btn-danger">Wyloguj</a>
 			
         <br />
     </c:when>    

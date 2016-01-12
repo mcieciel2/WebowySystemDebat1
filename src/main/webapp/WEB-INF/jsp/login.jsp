@@ -63,20 +63,13 @@
 
             
          
-<body onload='document.loginForm.username.focus();'>
+<body>
 
 
 
 	<div id="login-box">
 
-	
 
-		<c:if test="${not empty error}">
-			<div class="error">${error}</div>
-		</c:if>
-		<c:if test="${not empty msg}">
-			<div class="msg">${msg}</div>
-		</c:if>
        <form name='loginForm'
 			action="<c:url value='/j_spring_security_check' />" method='POST'>
           
@@ -99,8 +92,7 @@
         
 	
 
-			<!--input type="hidden" name="${_csrf.parameterName}"
-				value="${_csrf.token}" /-->
+			
 
 		</form>
 	</div>
@@ -140,7 +132,7 @@
      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" ></script>
  
   </body>
 </html>

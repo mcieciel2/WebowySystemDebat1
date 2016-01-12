@@ -31,7 +31,7 @@
     <![endif]-->
   </head>
   <body>
-  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -61,7 +61,7 @@
 
     </c:if>
               
-                            <a href="<c:url value="/login.htm"/>" role=button type="submit" class="btn btn-danger">Wyloguj</a>
+                            <a href="<c:url value="/logout"/>" role=button type="submit" class="btn btn-danger">Wyloguj</a>
 			
         <br />
     </c:when>    
@@ -76,7 +76,6 @@
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
-
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
    

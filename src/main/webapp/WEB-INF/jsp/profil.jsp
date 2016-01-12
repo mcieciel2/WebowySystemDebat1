@@ -27,7 +27,7 @@
     <![endif]-->
   </head>
   <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -57,7 +57,7 @@
 
     </c:if>
               
-                            <a href="<c:url value="/login.htm"/>" role=button type="submit" class="btn btn-danger">Wyloguj</a>
+                            <a href="<c:url value="/logout"/>" role=button type="submit" class="btn btn-danger">Wyloguj</a>
 			
         <br />
     </c:when>    
@@ -84,21 +84,8 @@
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
-      <div>
+   
 
-  <!-- Nav tabs -->
-  <ul class="nav nav-tabs" role="tablist">
-   <li role="presentation" class="active"><a href="#mojprofil" aria-controls="home" role="tab" data-toggle="tab">Mój profil</a></li>
-
-    <li role="presentation" ><a href="#wybierzterminy" aria-controls="profile" role="tab" data-toggle="tab">Wybierz terminy</a></li>
-
-  </ul>
-
-  <!-- Tab panes -->
-
-  <div class="tab-content">
-
-   <div role="tabpanel" class="tab-pane active" id="mojprofil">
 
   <center> <h3>Mój profil</h3></center>
     	
@@ -124,59 +111,23 @@
    <div class="form-group">
    
     <label>Avatar</label>
-     <img src="images/profil.png" height="100px" weight="100px" />
+     <img src="${uzytkownik.zdjecie}" height="100px" weight="100px" />
 
    </div>
   
   <a href="<c:url value="/editu.htm"/>?id=${uzytkownik.id}" type="button" align="right" type="submit" class="btn btn-default">Edytuj dane</a>
   <button align="right" type="submit" class="btn btn-default">Zmień hasło</button>
-
+<a href="<c:url value="/wybierzterminy.htm"/>?id=${uzytkownik.id}" type="button" align="right" type="submit" class="btn btn-default">Wybierz terminy</a>
 
    </form>
 
   </div>
   
 
-    <div role="tabpanel" class="tab-pane" id="wybierzterminy">
-
-
-  <center>  <h3>Wybierz terminy: </h3></center>
-
- <ul class="list-group">
-  <a href="#top" class="list-group-item">
-    <span class="badge">14</span>
-  służba zdrowia</a>
-  
-  <a href="#top" class="list-group-item">
-    <span class="badge">2</span>
-    polityka zagraniczna</a>
-  
-  <a href="#top" class="list-group-item">
-    <span class="badge">1</span>
-    obronność</a>
- 
-</ul>
-    	
-    	<div class="form-group">
-
-    	<label for="sel2">Kategoria:</label>
-  <select class="form-control" id="sel1">
-    <option>Zdrowie</option>
-    <option>Ekologia</option>
-    <option>Filozofia</option>
-    <option>Wybory</option>
-  </select>
-  <label for="sel1">Wybierz terminy:</label>
-  <select class="form-control" id="sel1">
-    <option>media</option>
-    <option>służby specjalne</option>
-    <option>polityka prorodzinna</option>
-    <option>militaria</option>
-  </select>
   
 
-  <button type="submit" class="btn btn-default">Dodaj</button>
-</div>
+  
+
 
 
 
@@ -189,19 +140,19 @@
 
   
 
-  </div>
+  
 
-</div>
+
     
-      </div>
-      </div>
+
+   
 
       <hr>
 
       <footer>
         <p>© Company 2014</p>
       </footer>
-    </div>
+ 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import pl.com.softproject.spring.crm.web.dao.KategoriaDAO;
+import pl.com.softproject.spring.crm.web.dao.TerminDAO;
 import pl.com.softproject.spring.crm.web.dao.UzytkownikDAO;
 import pl.com.softproject.spring.crm.web.model.Uzytkownik;
 
@@ -20,6 +22,10 @@ public class UzytkownikController {
 
     @Autowired
     private UzytkownikDAO uzytkownikDAO;
+    @Autowired
+    private KategoriaDAO kategoriaDAO;
+    @Autowired
+    private TerminDAO terminDAO;
 
     @RequestMapping("/register")
     public ModelAndView register() {
@@ -115,6 +121,22 @@ public class UzytkownikController {
 
         return model;
 
+    }
+
+    @RequestMapping("/wybierzterminy")
+    public ModelAndView wybierzterminy(@RequestParam int id) {
+
+        ModelAndView model = new ModelAndView("wybierzterminy");
+
+        Uzytkownik uzytkownik = uzytkownikDAO.findOne(id);
+        List kategorie = kategoriaDAO.findAll();
+        List terminy = terminDAO.findAll();
+        List wybraneterminy = uzytkownik.getTerminy();
+
+        model.addObject("kategorie", kategorie);
+        model.addObject("terminy", terminy);
+        model.addObject("wybraneterminy", wybraneterminy);
+        return model;
     }
 
     /*   
