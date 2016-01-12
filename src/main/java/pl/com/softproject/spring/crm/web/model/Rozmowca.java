@@ -93,7 +93,6 @@ public class Rozmowca {
         odbyte = 0;
         wygrane = 0;
         ranking = 0;
-        zdjecie = rozmowca.getZdjecie();
 
     }
 
